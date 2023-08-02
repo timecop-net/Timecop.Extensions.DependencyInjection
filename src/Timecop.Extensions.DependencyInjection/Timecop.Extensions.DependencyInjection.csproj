@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <PackageId>Timecop.Extensions.DependencyInjection</PackageId>
+	  <Description>Extensions to register Timecop's IClock with IServiceCollection in one line of code.</Description>
+	  <Authors>Dmytro Khmara</Authors>
+	  <Copyright>Copyright Dmytro Khmara</Copyright>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <PackageTags>DateTime;Date;Time;Unit;Testing;Timecop;DependencyInjection</PackageTags>
+	  <PackageIcon>icon.png</PackageIcon>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <RepositoryType>git</RepositoryType>
+	  <RepositoryUrl>https://github.com/timecop-net/Timecop.Extensions.DependencyInjection</RepositoryUrl>
+
+	  <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+	  <Nullable>enable</Nullable>
+	  <LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[6.0.0,7.0.0)" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[7.0.0,8.0.0)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="" />
+		<None Include="..\..\icon.png" Pack="true" PackagePath="" />
+
+		<PackageReference Include="MinVer" Version="4.3.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+		<PackageReference Include="Timecop" Version="[2.2.0,3.0.0)" />
+	</ItemGroup>
+
+</Project>
