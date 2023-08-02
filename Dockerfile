@@ -10,7 +10,7 @@ RUN dotnet restore
 # copy everything else and build app
 COPY ./ ./
 WORKDIR /source
-RUN dotnet build -c release -o /out/package --no-restore
+RUN dotnet build -c release -f net7.0 -o /out/package --no-restore
 
 FROM build as test
 
